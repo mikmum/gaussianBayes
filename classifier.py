@@ -80,8 +80,8 @@ X_test_scaled = scaler.transform(X_test)
 
 # Klasyfikator z priorytetami. Zakładamy bez żadnych informacji że prawdopodobieństwo kupna
 # to 0.4
-priors = [0.6, 0.4]
-model = GNBClassifier(priors=priors)
+priors = [0.5, 0.5]
+model = GNBClassifier(priors)
 
 # Trenowanie modelu
 model.fit(X_train_scaled, y_train)
@@ -108,7 +108,7 @@ Z = Z.reshape(xx.shape)
 
 # Pierwszy wykres - tylko dane ze zbioru treningowego (Wiek i Zarobki)
 plt.figure(figsize=(10, 6))
-plt.contourf(xx, yy, Z, alpha=0.5, cmap="RdYlBu_r")
+plt.contourf(xx, yy, Z, alpha=0.5, cmap="bwr_r")
 
 colors_train = ["red" if val == 0 else "blue" for val in y_train]
 
@@ -130,7 +130,7 @@ plt.show()
 
 # Drugi wykres - wartości przewidywane ze zbioru testowego (Wiek i Zarobki)
 plt.figure(figsize=(10, 6))
-plt.contourf(xx, yy, Z, alpha=0.5, cmap="RdYlBu_r")
+plt.contourf(xx, yy, Z, alpha=0.5, cmap="bwr_r")
 
 colors_test_pred = ["red" if val == 0 else "blue" for val in y_pred]
 
@@ -152,7 +152,7 @@ plt.show()
 
 # Trzeci wykres - faktyczne wartości ze zbioru testowego (Wiek i Zarobki)
 plt.figure(figsize=(10, 6))
-plt.contourf(xx, yy, Z, alpha=0.5, cmap="RdYlBu_r")
+plt.contourf(xx, yy, Z, alpha=0.5, cmap="bwr_r")
 
 colors_test_actual = ["red" if val == 0 else "blue" for val in y_test]
 

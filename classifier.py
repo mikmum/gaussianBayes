@@ -71,7 +71,7 @@ X = data[["Age", "EstimatedSalary"]]
 y = data["Purchased"]
 
 # Podział na zbiór treningowy i testowy. Okreslamy rozmiar testowego jako wartość od 0 do 1, reszta będzie zbiorem treningowym.
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=24)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 # Normalizacja cech
 scaler = StandardScaler()
